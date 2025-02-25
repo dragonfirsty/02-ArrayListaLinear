@@ -102,8 +102,36 @@ void inserirElemento()
 
 }
 
-// deve ser implementada como resposta ao exercicio
+// deve ser implementada como resposta ao exercicio [1,4,7,2,7]
 void buscarElemento()
 {
+	int numeroEscolhido;
+	int quantasVezes = 0;
+	int posicoes[MAX];
+	cout << "Digite o numero: ";
+	cin >> numeroEscolhido;
 
+	for(int n = 0;n<MAX;n++){
+		if(numeroEscolhido == lista[n]){
+			posicoes[quantasVezes] = n;
+			quantasVezes++;
+		}
+	}
+
+	if(quantasVezes == 0){
+		cout << "Nâo foi encontrado nenhuma vez";
+	}
+	else if(quantasVezes == 1){
+		cout << "foi encontrado o valor: " << numeroEscolhido <<endl;
+		cout << " Na Posicao: " << posicoes[0];
+	}
+	else{
+		cout << "Foi encontrado o valor:" << numeroEscolhido << endl;
+		cout << quantasVezes << " vezes" << endl;
+		cout << "Nas posicoes:";
+		for(int n = 0;n<quantasVezes;n++){
+			cout << posicoes[n] << ",";
+		}
+	}
+	
 }
